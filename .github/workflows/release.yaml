@@ -18,4 +18,4 @@ jobs:
         id: bump
         with:
           component: minor
-      - run: echo New Version Number ${{ steps.bump.outputs.newVersion }}
+        run: echo New Version Number ${{ steps.bump.outputs.newVersion }}
