@@ -17,8 +17,6 @@ jobs:
       - name: 'Automated Version Bump'
         id: version-bump
         uses: 'phips28/gh-action-bump-version@master'
-        with:
-          tag-prefix: 'v'
         env:
           GITHUB_TOKEN: ${{ secrets.BRY_PAT }}
       - name: 'cat package.json'
