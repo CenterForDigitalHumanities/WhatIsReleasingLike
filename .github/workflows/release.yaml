@@ -1,5 +1,10 @@
 name: RELEASE new minor
-on: push
+on:
+  push:
+    branches:
+      - release
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 jobs:
   my-job:
     runs-on: ubuntu-latest
