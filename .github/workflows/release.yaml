@@ -9,7 +9,9 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Bump version
-      - uses: fwilhe2/bump-version@main
+      - name: my-step
+        run: echo "Hello World!"
+      - name: bump version
+        uses: fwilhe2/bump-version@main
         id: bump
-      - run: echo ${{ steps.bump.outputs.newVersion }}
+        run: echo ${{ steps.bump.outputs.newVersion }}
