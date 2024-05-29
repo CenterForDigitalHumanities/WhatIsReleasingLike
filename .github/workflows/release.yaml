@@ -11,7 +11,3 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World!"
-      - name: bump version
-        uses: fwilhe2/bump-version@main
-        id: bump
-        run: echo ${{ steps.bump.outputs.newVersion }}
