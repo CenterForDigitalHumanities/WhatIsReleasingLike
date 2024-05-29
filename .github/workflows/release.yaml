@@ -4,7 +4,7 @@ on:
     branches:
       - release
 jobs:
-   bump-version:
+   bump-version-and-release:
     name: 'Bump Version on master'
     runs-on: ubuntu-latest
     steps:
@@ -19,8 +19,9 @@ jobs:
         uses: 'phips28/gh-action-bump-version@master'
         env:
           GITHUB_TOKEN: ${{ secrets.BRY_PAT }}
-      - name: 'cat package.json'
-        run: cat ./package.json
+        with:
+          skip-commit:  'true'
+          skip-tag: 'true'
       - name: Generate Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
